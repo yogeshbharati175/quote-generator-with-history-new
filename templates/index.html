@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Generate, copy, and save your favorite quotes.">
+  <title>Quote Generator with History</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="page">
+    <header class="header">
+      <div class="logo">❝</div>
+      <div><h1>Quote Generator</h1><p>Words to inspire your day</p></div>
+    </header>
+
+    <section class="quote-card" aria-live="polite">
+      <span class="eyebrow">YOUR DAILY INSPIRATION</span>
+      <div id="quoteText" class="quote-text">Loading your quote...</div>
+      <div id="quoteAuthor" class="quote-author"></div>
+      <div class="actions">
+        <button id="newQuoteBtn" class="primary">↻ New Quote</button>
+        <button id="favoriteBtn" class="secondary">♡ Save Favorite</button>
+        <button id="copyBtn" class="secondary">▢ Copy Quote</button>
+      </div>
+      <p id="status" class="status" role="status"></p>
+    </section>
+
+    <section class="history">
+      <div class="history-heading">
+        <div><h2>Favorite History</h2><p>Your saved quotes in one place</p></div>
+        <span id="favoriteCount" class="count">0 saved</span>
+      </div>
+      <div id="favoritesList" class="favorites-list"></div>
+    </section>
+    <footer>Built with Flask, SQLite, JavaScript & a public Quotes API</footer>
+  </main>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
